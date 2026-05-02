@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torag | Digital Business Card</title>
+    
+    <!-- SEO & Meta -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="Minhaj ul Karim Torag - Assistant Manager at Hasnain Travels & Tours Ltd.">
+    
+    <!-- Icons & Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="Favicon.png">
+    <link rel="apple-touch-icon" href="Torag.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-canvas"></div>
+
+    <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+
+    <main class="card-wrapper">
+        <div class="vcard" id="mainCard">
+            
+            <!-- Profile Section -->
+            <header class="profile-section">
+                <div class="avatar-container">
+                    <img src="Torag.jpg" alt="Minhaj ul Karim Torag" class="avatar-img">
+                    <div class="status-badge">
+                        <span class="pulse"></span>
+                        Available
+                    </div>
+                </div>
+                <h1 class="name">Minhaj ul Karim Torag</h1>
+                <p class="title-badge">Assistant Manager</p>
+                <p class="company-name">Hasnain Travels & Tours Ltd.</p>
+            </header>
+
+            <!-- Contact Bento Grid -->
+            <div class="contact-bento">
+                <a href="tel:+8801313888844" class="bento-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="bento-label">Phone</div>
+                    <div class="bento-value">+880 1313-888844</div>
+                </a>
+                <a href="https://wa.me/8801307534443" class="bento-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="bento-label">WhatsApp</div>
+                    <div class="bento-value">Chat Now</div>
+                </a>
+                <a href="mailto:ask@torag.bd" class="bento-item large">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div class="bento-label">Email</div>
+                        <div class="bento-value">ask@torag.bd</div>
+                    </div>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hasnain+Travels+%26+Tours+Ltd+Al+Razi+Complex+Bijoy+Nagar+Dhaka" target="_blank" class="bento-item large">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <div class="bento-label">Location</div>
+                        <div class="bento-value">Bijoy Nagar, Dhaka</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Services -->
+            <div class="services-grid">
+                <a href="https://wa.me/8801307534443?text=Hi,%20I'm%20interested%20in%20Hajj%20%26%20Umrah%20services." target="_blank" class="service-chip"><i class="fas fa-mosque"></i> Hajj & Umrah</a>
+                <a href="https://wa.me/8801307534443?text=Hi,%20I'd%20like%20to%20book%20Air%20Tickets." target="_blank" class="service-chip"><i class="fas fa-plane"></i> Air Ticketing</a>
+                <a href="https://wa.me/8801307534443?text=Hi,%20I%20need%20Visa%20Processing%20assistance." target="_blank" class="service-chip"><i class="fas fa-passport"></i> Visa Processing</a>
+                <a href="https://wa.me/8801307534443?text=Hi,%20I'm%20interested%20in%20Recruitment%20services." target="_blank" class="service-chip"><i class="fas fa-briefcase"></i> Recruitment</a>
+                <a href="https://wa.me/8801307534443?text=Hi,%20tell%20me%20about%20your%20Tours." target="_blank" class="service-chip"><i class="fas fa-map-location-dot"></i> Tours</a>
+                <a href="https://wa.me/8801307534443?text=Hi,%20I%20need%20Support." target="_blank" class="service-chip"><i class="fas fa-headset"></i> Support</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button class="primary-btn" onclick="downloadVCF()">
+                    <i class="fas fa-download"></i> Save Contact
+                </button>
+                <div class="btn-group">
+                    <button class="secondary-btn" onclick="shareCard()">Share</button>
+                    <button class="secondary-btn" onclick="openQR()"><i class="fas fa-qrcode"></i></button>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-floating">
+                <a href="https://facebook.com/torag.me" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/mr.torag" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/torag" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://torag.bd/" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
+            </div>
+
+            <!-- License & Footer -->
+            <footer class="footer-license">
+                IATA: 42307764 | Hajj: 815 | Umrah: 381<br>
+                RL: 1592 | IATA • ATAB • HAAB • BAIRA
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- QR Modal -->
+    <div class="modal" id="qrModal" onclick="closeQR(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeQR(event)">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-qrcode"></i>
+                <h2>Share Profile</h2>
+            </div>
+            <div class="qr-container">
+                <img src="QR.svg" alt="QR Code">
+            </div>
+            <p class="modal-desc">Others can scan this code to instantly view your digital business card.</p>
+            <a href="QR.svg" download="Torag_QR.svg" class="secondary-btn" style="text-decoration: none; margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fas fa-download"></i> Download QR
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            toggleTheme();
+        }
+
+        // QR Code Modal
+        function openQR() {
+            document.getElementById('qrModal').classList.add('active');
+        }
+
+        function closeQR(e) {
+            document.getElementById('qrModal').classList.remove('active');
+        }
+
+        // VCard Download
+        function downloadVCF() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Minhaj ul Karim Torag
+N:Torag;Minhaj ul Karim;;;
+ORG:Hasnain Travels & Tours Ltd.
+TITLE:Assistant Manager
+TEL;TYPE=CELL:+8801313888844
+EMAIL:ask@torag.bd
+ADR;TYPE=WORK:;;Al Razi Complex, Bijoy Nagar;Dhaka;1000;Bangladesh
+URL:https://torag.bd
+END:VCARD`;
+            const blob = new Blob([vcard], { type: "text/vcard" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "Torag_Contact.vcf";
+            a.click();
+        }
+
+        // Copy Address
+        function copyAddress() {
+            navigator.clipboard.writeText("Al Razi Complex, Bijoy Nagar, Dhaka-1000, Bangladesh");
+            alert("Address copied!");
+        }
+
+        // Share
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Torag | Digital Business Card',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copied!");
+            }
+        }
+    </script>
+
+</body>
+</html>
