@@ -344,16 +344,40 @@ body.dark-mode .primary-btn {
     position: fixed;
     top: 24px;
     right: 24px;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) rotate(8deg);
+    border-color: var(--accent);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    background: var(--bg-main);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover i {
+    color: var(--accent);
+}
+
+body.dark-mode .theme-toggle {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Modal */
